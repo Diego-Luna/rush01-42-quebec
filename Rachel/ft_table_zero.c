@@ -6,7 +6,7 @@
 /*   By: raruiz-r <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 11:45:59 by raruiz-r          #+#    #+#             */
-/*   Updated: 2022/03/05 15:50:09 by raruiz-r         ###   ########.fr       */
+/*   Updated: 2022/03/05 16:09:25 by raruiz-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include<unistd.h>
@@ -31,6 +31,7 @@ void	ft_table_zero(int x, int y)
 		x++;
 	}	
 	ft_put_table(x, y);
+	free(table_result[x][y]);
 }
 
 void	ft_put_table(int x, int y)
@@ -39,7 +40,7 @@ void	ft_put_table(int x, int y)
 	int	y_table;
 	int	z;
 
-	z = '0';
+	z = 42;
 	if (x <= 0 || y <= 0)
 	{
 		return ;
