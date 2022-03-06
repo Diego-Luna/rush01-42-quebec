@@ -6,33 +6,32 @@
 /*   By: raruiz-r <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 16:58:18 by raruiz-r          #+#    #+#             */
-/*   Updated: 2022/03/05 18:46:37 by raruiz-r         ###   ########.fr       */
+/*   Updated: 2022/03/05 20:05:38 by raruiz-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
-void	ft_putchar(char print);
-
-int	ft_what_print0(int x, int y, int max_x, int max_y)
+int	ft_what_print(int tab[4][4])
 {
-	int	*tab[4][4];
+	int y;
+	int x;
 
 	x = 0;
-	while (x <= max_x)
+	while (x <= 4)
 	{
 		y = 0;
-		while (y <= max_y)
+		while (y <= 4)
 		{
-			if ((tab[x][y] == tab[x][y + 1]) || (tab[x][y] == tab[x][y + 2])
-			|| (tab[x][y] == tab[x][y + 3]) || (tab[x][y + 1] == tab[x][y + 2])
-				|| (tab[x][y + 1] == tab[x][y + 3])
-				|| (tab[x][y + 2] == tab[x][y + 3]))
+			if ((tab[y][x] == tab[y][x + 1]) || (tab[y][x] == tab[y][x + 2])
+			|| (tab[y][x] == tab[y][x + 3]) || (tab[y][x + 1] == tab[y][x + 2])
+				|| (tab[y][x + 1] == tab[y][x + 3])
+				|| (tab[y][x + 2] == tab[y][x + 3]))
 				write (1, "Error\n", 6);
 			return (1);
-			if ((tab[x][y] == tab[x + 1][y]) || (tab[x][y] == tab[x + 2][y])
-			|| (tab[x][y] == tab[x + 3][y]) || (tab[x + 1][y] == tab[x + 2][y])
-				|| (tab[x + 1][y] == tab[x + 3][y])
-				|| (tab[x + 2][y] == tab[x + 3][y]))
+			if ((tab[y][x] == tab[y + 1][x]) || (tab[y][x] == tab[y + 2][x])
+			|| (tab[y][x] == tab[y + 3][x]) || (tab[y + 1][x] == tab[y + 2][x])
+				|| (tab[y + 1][x] == tab[y + 3][x])
+				|| (tab[y + 2][x] == tab[y + 3][x]))
 				write (1, "Error\n", 6);
 			return (1);
 		}	
@@ -42,25 +41,31 @@ int	ft_what_print0(int x, int y, int max_x, int max_y)
 	return (0);
 }
 
-void	ft_fill_table(int x, int y)
+void	ft_fill_table(int table[4][4])
 {
 	int	x_table;
 	int	y_table;
 
-	if (x <= 0 || y <= 0)
-	{
-		write (1, "Error\n", 6);
-		return ;
-	}
 	y_table = 0;
 	x_table = 0;
-	while (++y_table <= y)
+	while (++y_table <= 4)
 	{
-		while (++x_table <= x)
+		while (++x_table <= 4)
 		{
-			ft_what_print0(x_table, y_table, x, y);
+			ft_what_print(table[y_table][x_table]);
 		}
 		x_table = 0;
-		write(1, "\n", 1);
 	}
+}
+
+int	main(void)
+{
+	int	tab[4][4] = {
+		{4, 2, 3, 4}, 
+		{1, 2, 4, 3}, 
+		{3, 1, 2, 1}, 
+		{2, 3, 1, 2}
+	};
+		
+	ft_fill_table(tab);
 }

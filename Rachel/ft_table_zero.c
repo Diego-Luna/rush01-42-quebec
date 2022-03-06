@@ -6,19 +6,19 @@
 /*   By: raruiz-r <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 11:45:59 by raruiz-r          #+#    #+#             */
-/*   Updated: 2022/03/05 18:32:30 by raruiz-r         ###   ########.fr       */
+/*   Updated: 2022/03/05 20:11:54 by raruiz-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include<unistd.h>
 #include<stdlib.h>
 
-void	ft_put_table(int x, int y);
+void	ft_put_table(int y, int x);
 
-void	ft_table_zero(int x, int y)
+void	ft_table_zero(int y, int x)
 {
 	int	*table_result[4][4];
 
-	table_result[x][y] = malloc(4 * 4 * sizeof(int));
+	table_result[y][x] = malloc(4 * 4 * sizeof(int));
 	x = 0;
 	while (x < 4)
 	{
@@ -29,11 +29,11 @@ void	ft_table_zero(int x, int y)
 		}
 		x++;
 	}	
-	ft_put_table(x, y);
-	free(table_result[x][y]);
+	ft_put_table(y, x);
+	free(table_result[y][x]);
 }
 
-void	ft_put_table(int x, int y)
+void	ft_put_table(int y, int x)
 {
 	int	x_table;
 	int	y_table;
@@ -64,5 +64,5 @@ int	main(void)
 
 	x = 4;
 	y = 4;
-	ft_table_zero(x, y);
+	ft_table_zero(y, x);
 }
