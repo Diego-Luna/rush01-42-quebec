@@ -6,14 +6,16 @@
 /*   By: dluna-lo <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 10:42:09 by dluna-lo          #+#    #+#             */
-/*   Updated: 2022/03/05 18:45:54 by dluna-lo         ###   ########.fr       */
+/*   Updated: 2022/03/05 19:35:44 by dluna-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <unistd.h>
 
 int		ft_strlen(char *str);
 int		ft_str_is_numeric_and_space(char *str);
+int		ft_game_possible(int table_reference[6][6]);
 void	ft_atoi(char *str, int list_x[16]);
 void	ft_table_print(int table[6][6], int size_x, int size_y);
 
@@ -56,13 +58,11 @@ int	main(int arg, char **str)
 		printf("Value str:%s\n", str[1]);
 		ft_atoi(str[1], reference_list);
 		ft_create_table(table_reference, reference_list);
-		printf("Value table:%d\n", reference_list[0]);
-		printf("Value table:%d\n", reference_list[1]);
-		printf("Value table:%d\n", reference_list[2]);
-		printf("Value table:%d\n", reference_list[3]);
-		printf("Value table:%d\n", reference_list[4]);
-		printf("Value table:%d\n", reference_list[5]);
 		ft_table_print(table_reference, 6, 6);
+		if (ft_game_possible(table_reference))
+			write(1, "YESSS", 5);
+		else
+			write(1, "Error", 5);
 	}
 	return (0);
 }
