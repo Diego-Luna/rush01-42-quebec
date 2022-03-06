@@ -81,9 +81,9 @@ int clue_is_3_impossibles(int x, int y) /* this function puts 1 (impossible) in 
 	}
 }
 
-int clue_is_four_impossibles_RR(int x, int y) /* this function puts 1 (impossible) in tables (see whiteboard for clue four)  */
+int clue_is_four_impossibles_RR(int x, int y) /* this function puts 1 (impossible) in tables (see whiteboard for clue four)  FOR RIGHT ROWS*/
 {
-	if	(tab_reference[5][y] == 1)
+	if	(tab_reference[5][y] == 4)
 	{
 		table_4[3][y] == 1;
 		table_4[2][y] == 1;
@@ -91,25 +91,6 @@ int clue_is_four_impossibles_RR(int x, int y) /* this function puts 1 (impossibl
 		table_3[3][y] == 1;
 		table_3[2][y] == 1;
 		table_3[0][y] == 1;
-		table_2[0][y] == 1;
-		table_2[3][y] == 1;
-		table_2[1][y] == 1;
-		table_2[0][y] == 1;
-		table_1[2][y] == 1;
-		table_1[1][y] == 1;
-		table_1[0][y] == 1;
-	}
-int clue_is_four_impossibles_RR(int x, int y) /* this function puts 1 (impossible) in tables (see whiteboard for clue four)  */
-{
-	if	(tab_reference[5][y] == 1)
-	{
-		table_4[3][y] == 1;
-		table_4[2][y] == 1;
-		table_4[1][y] == 1;
-		table_3[3][y] == 1;
-		table_3[2][y] == 1;
-		table_3[0][y] == 1;
-		table_2[0][y] == 1;
 		table_2[3][y] == 1;
 		table_2[1][y] == 1;
 		table_2[0][y] == 1;
@@ -118,26 +99,62 @@ int clue_is_four_impossibles_RR(int x, int y) /* this function puts 1 (impossibl
 		table_1[0][y] == 1;
 	}
 
-	if	(tab_reference[0][y] == 1)
+int clue_is_four_impossibles_LR(int x, int y) /* this function puts 1 (impossible) in tables (see whiteboard for clue four)  FOR LEFT ROWS */
+{
+	if	(tab_reference[0][y] == 4)
 	{
 		table_4[0][y] == 1;
+		table_4[1][y] == 1;
+		table_4[2][y] == 1;
 		table_3[0][y] == 1;
+		table_3[1][y] == 1;
+		table_3[3][y] == 1;
 		table_2[0][y] == 1;
-	}
-	if	(tab_reference[x][5] == 1)
-	{
-		table_4[x][3] == 1;
-		table_3[x][3] == 1;
-		table_2[x][3] == 1;
-	}
-	if	(tab_reference[x][0] == 1)
-	{
-		table_4[x][0] == 1;
-		table_3[x][0] == 1;
-		table_2[x][0] == 1;
+		table_2[2][y] == 1;
+		table_2[3][y] == 1;
+		table_1[1][y] == 1;
+		table_1[2][y] == 1;
+		table_1[3][y] == 1;
 	}
 }
 
+int clue_is_four_impossibles_BC(int x, int y) /* this function puts 1 (impossible) in tables (see whiteboard for clue four)  FOR BOTTOM COLUMN*/
+{
+	if	(tab_reference[x][5] == 4)
+	{
+		table_4[x][3] == 1;
+		table_4[x][2] == 1;
+		table_4[x][1] == 1;
+		table_3[x][3] == 1;
+		table_3[x][2] == 1;
+		table_3[x][0] == 1;
+		table_2[x][3] == 1;
+		table_2[x][1] == 1;
+		table_2[x][0] == 1;
+		table_1[x][2] == 1;
+		table_1[x][1] == 1;
+		table_1[x][0] == 1;
+	}
+}
+
+int clue_is_four_impossibles_TC(int x, int y) /* this function puts 1 (impossible) in tables (see whiteboard for clue four) . FOR TOP COLUMN */
+{
+	if	(tab_reference[x][0] == 4)
+	{
+		table_4[x][0] == 1;
+		table_4[x][1] == 1;
+		table_4[x][2] == 1;
+		table_3[x][0] == 1;
+		table_3[x][1] == 1;
+		table_3[x][3] == 1;
+		table_2[x][0] == 1;
+		table_2[x][2] == 1;
+		table_2[x][3] == 1;
+		table_1[x][1] == 1;
+		table_1[x][2] == 1;
+		table_1[x][3] == 1;
+	}
+}
 int clue_is__one_results(int x, int y) /* this function puts 4 in results (rule a) */
 {
 	if	(tab_reference[5][y] == 1)	/* if my clues on RIGHT ROWS == 1 */
@@ -206,29 +223,5 @@ int clue_is_not_one_impossibles(int x, int y) /* this function puts 1 (impossibl
 	if	(tab_reference[x][5] != 1)
 		table_4[x][3] == 1;
 	if	(tab_reference[x][0] != 1)
-		table_4[x][0] == 1;
+		table_4[x][] == 1;
 }		
-
-int clue_is_3_impossibles(int x, int y) /* this function puts 1 (impossible) in tables 3 and 4 (rule f)  */
-{
-	if	(tab_reference[5][y] == 3)
-	{
-		table_4[3][y] == 1;
-		table_3[3][y] == 1;
-	}
-	if	(tab_reference[0][y] == 3) 
-	{
-		table_4[0][y] == 1;
-		table_3[0][y] == 1;
-	}
-	if	(tab_reference[x][5] == 3)
-	{
-		table_4[x][3] == 1;
-		table_3[x][3] == 1;
-	}
-	if	(tab_reference[x][0] == 3)
-	{
-		table_4[x][0] == 1;
-		table_3[x][0] == 1;
-	}
-}
