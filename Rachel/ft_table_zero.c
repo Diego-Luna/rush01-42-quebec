@@ -6,25 +6,24 @@
 /*   By: raruiz-r <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 11:45:59 by raruiz-r          #+#    #+#             */
-/*   Updated: 2022/03/05 16:09:25 by raruiz-r         ###   ########.fr       */
+/*   Updated: 2022/03/05 18:32:30 by raruiz-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include<unistd.h>
 #include<stdlib.h>
-#define SIZE_RES 4
 
 void	ft_put_table(int x, int y);
 
 void	ft_table_zero(int x, int y)
 {
-	int	*table_result[SIZE_RES][SIZE_RES];
+	int	*table_result[4][4];
 
-	table_result[x][y] = malloc(SIZE_RES * SIZE_RES * sizeof(int));
+	table_result[x][y] = malloc(4 * 4 * sizeof(int));
 	x = 0;
-	while (x < SIZE_RES)
+	while (x < 4)
 	{
 		y = 0;
-		while (y < SIZE_RES)
+		while (y < 4)
 		{
 			y++;
 		}
