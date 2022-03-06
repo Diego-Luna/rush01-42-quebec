@@ -6,7 +6,7 @@
 /*   By: raruiz-r <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 11:45:59 by raruiz-r          #+#    #+#             */
-/*   Updated: 2022/03/06 09:03:18 by dluna-lo         ###   ########.fr       */
+/*   Updated: 2022/03/06 12:01:14 by dluna-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include<unistd.h>
@@ -88,10 +88,20 @@ void	ft_table_constant(int table[5][4][4], int t_r[6][6])
 	}
 }
 
+void	ft_put_tr_values(int values[4], int t_r[6][6], int y_x[2])
+{
+	values[0] = t_r[0][y_x[1]];
+	values[1] = t_r[y_x[0]][0];
+	values[2] = t_r[5][y_x[1]];
+	values[3] = t_r[y_x[0]][5];
+}
+
 void	ft_loop_impossibles(int table[5][4][4], int t_r[6][6])
 {
 	int	x;
 	int	y;
+	int	y_x[2];
+	int	value[4];
 
 	y = 0;
 	while (y < 6)
@@ -99,29 +109,14 @@ void	ft_loop_impossibles(int table[5][4][4], int t_r[6][6])
 		x = 0;
 		while (x < 6)
 		{
+			if (t_r[y][x] == 0 && x >= 1 && x <= 4 && y >= 1 && y <= 4)
+			{
+				y_x[0] = y;
+				y_x[1] = x;
+				ft_put_tr_values(value, t_r, y_x);
+			}
 			x++;
 		}
 		y++;
 	}
 }
-
-/*
-void	ft_table_zero(int y, int x)
-{
-	int	*table_result[4][4];
-
-	table_result[y][x] = malloc(4 * 4 * sizeof(int));
-	x = 0;
-	while (x < 4)
-	{
-		y = 0;
-		while (y < 4)
-		{
-			y++;
-		}
-		x++;
-	}	
-	ft_put_table(y, x);
-	free(table_result[y][x]);
-}
-*/
