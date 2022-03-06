@@ -6,7 +6,7 @@
 /*   By: dluna-lo <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 10:42:09 by dluna-lo          #+#    #+#             */
-/*   Updated: 2022/03/06 07:47:35 by dluna-lo         ###   ########.fr       */
+/*   Updated: 2022/03/06 09:03:16 by dluna-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ int	main(int arg, char **str)
 			ft_table_rest(table);
 			ft_table_constant(table, table_reference);
 			ft_table_print_3d(table, 5, 4, 4);
+			ft_table_print(table_reference, 6, 6);
 		}
 		else
 			write(1, "Error", 5);
