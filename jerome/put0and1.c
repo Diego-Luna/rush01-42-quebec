@@ -53,13 +53,13 @@ int clue_is_2_impossibles(int x, int y) /* this function puts 1 (impossible) in 
 	}
 }
 
-int clue_is_3_impossibles(int x, int y) /* this function puts 1 (impossible) in tables 3 and 4 (rule f and whiteboard clue 3)  */
+int clue_is_3_impossibles(int x, int y, int table[5][4][4]) /* this function puts 1 (impossible) in tables 3 and 4 (rule f and whiteboard clue 3)  */
 {
 	if	(tab_reference[5][y] == 3)
 	{
-		table_4[3][y] == 1;
-		table_4[2][y] == 1;
-		table_3[3][y] == 1;
+		table[4][3][y] = 1;
+		table_4[2][y] = 1;
+		table_3[3][y] = 1;
 	}
 	if	(tab_reference[0][y] == 3)
 	{
