@@ -6,7 +6,7 @@
 /*   By: dluna-lo <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 10:42:09 by dluna-lo          #+#    #+#             */
-/*   Updated: 2022/03/06 12:01:44 by dluna-lo         ###   ########.fr       */
+/*   Updated: 2022/03/06 15:52:46 by dluna-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_table_rest(int table[5][4][4]);
 void	ft_table_print_3d(int table[5][4][4], int s_z, int s_y, int s_x);
 void	ft_table_constant(int table[5][4][4], int t_r[6][6]);
 void	ft_loop_impossibles(int table[5][4][4], int t_r[6][6]);
+void    ft_fusion_tables_loop(int table[5][4][4]);
 
 void	ft_create_table(int reference[6][6], int list_x[16])
 {
@@ -62,13 +63,17 @@ int	main(int arg, char **str)
 		ft_atoi(str[1], reference_list);
 		ft_create_table(table_reference, reference_list);
 		ft_table_print(table_reference, 6, 6);
+		write(1, "\n-------\n", 9);
 		if (ft_game_possible(table_reference))
 		{
 			ft_table_rest(table);
 			ft_table_constant(table, table_reference);
-			ft_table_print_3d(table, 5, 4, 4);
-			ft_table_print(table_reference, 6, 6);
+		//	ft_table_print(table_reference, 6, 6);
 			ft_loop_impossibles(table, table_reference);
+			write(1, "\n", 1);
+		//	ft_table_print_3d(table, 5, 4, 4);
+			ft_fusion_tables_loop(table);
+			ft_table_print_3d(table, 5, 4, 4);
 		}
 		else
 			write(1, "Error", 5);
