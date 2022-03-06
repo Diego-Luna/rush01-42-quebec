@@ -6,21 +6,20 @@
 /*   By: raruiz-r <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 11:45:59 by raruiz-r          #+#    #+#             */
-/*   Updated: 2022/03/05 22:38:59 by dluna-lo         ###   ########.fr       */
+/*   Updated: 2022/03/06 06:48:58 by dluna-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include<unistd.h>
 #include<stdlib.h>
 
-
 void	ft_table_rest(int table[5][4][4])
 {
 	int	z;
-	int x;
-	int y;
+	int	x;
+	int	y;
 
 	z = 0;
-	while (z < 5 )
+	while (z < 5)
 	{
 		y = 0;
 		while (y < 4)

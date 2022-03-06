@@ -6,7 +6,7 @@
 /*   By: dluna-lo <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 10:42:09 by dluna-lo          #+#    #+#             */
-/*   Updated: 2022/03/05 22:36:16 by dluna-lo         ###   ########.fr       */
+/*   Updated: 2022/03/06 06:52:20 by dluna-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int		ft_str_is_numeric_and_space(char *str);
 int		ft_game_possible(int table_reference[6][6]);
 void	ft_atoi(char *str, int list_x[16]);
 void	ft_table_print(int table[6][6], int size_x, int size_y);
-void    ft_table_rest(int table[5][4][4]);
-void    ft_table_print_3d(int table[5][4][4], int size_z, int size_y, int size_x);
+void	ft_table_rest(int table[5][4][4]);
+void	ft_table_print_3d(int table[5][4][4], int s_z, int s_y, int s_x);
 
 void	ft_create_table(int reference[6][6], int list_x[16])
 {

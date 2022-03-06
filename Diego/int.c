@@ -6,7 +6,7 @@
 /*   By: dluna-lo <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 17:25:48 by dluna-lo          #+#    #+#             */
-/*   Updated: 2022/03/05 22:39:02 by dluna-lo         ###   ########.fr       */
+/*   Updated: 2022/03/06 06:50:52 by dluna-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,20 +37,20 @@ void	ft_table_print(int table[6][6], int size_x, int size_y)
 	}
 }
 
-void	ft_table_print_3d(int table[5][4][4], int size_z, int size_y, int size_x)
+void	ft_table_print_3d(int table[5][4][4], int s_z, int s_y, int s_x)
 {
 	int	x;
 	int	y;
-	int z;
-	z = 0;
+	int	z;
 
-	while(z < size_z)
+	z = 0;
+	while (z < s_z)
 	{
 		y = 0;
-		while (y < size_y)
+		while (y < s_y)
 		{
 			x = 0;
-			while (x < size_x)
+			while (x < s_x)
 			{	
 				ft_write(table[z][y][x]);
 				x++;
