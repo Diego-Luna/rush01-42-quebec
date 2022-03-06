@@ -6,15 +6,15 @@
 /*   By: raruiz-r <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 16:58:18 by raruiz-r          #+#    #+#             */
-/*   Updated: 2022/03/05 20:05:38 by raruiz-r         ###   ########.fr       */
+/*   Updated: 2022/03/05 20:24:21 by raruiz-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
 int	ft_what_print(int tab[4][4])
 {
-	int y;
-	int x;
+	int	y;
+	int	x;
 
 	x = 0;
 	while (x <= 4)
@@ -61,11 +61,11 @@ void	ft_fill_table(int table[4][4])
 int	main(void)
 {
 	int	tab[4][4] = {
-		{4, 2, 3, 4}, 
-		{1, 2, 4, 3}, 
-		{3, 1, 2, 1}, 
+		{4, 2, 3, 4},
+		{1, 2, 4, 3},
+		{3, 1, 2, 1},
 		{2, 3, 1, 2}
 	};
-		
+
 	ft_fill_table(tab);
 }
