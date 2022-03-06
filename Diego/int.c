@@ -6,7 +6,7 @@
 /*   By: dluna-lo <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 17:25:48 by dluna-lo          #+#    #+#             */
-/*   Updated: 2022/03/05 19:35:11 by dluna-lo         ###   ########.fr       */
+/*   Updated: 2022/03/05 19:46:43 by dluna-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ int	ft_game_possible(int table_reference[6][6])
 	y = 1;
 	while (x < 6)
 	{
-		if ((table_reference[0][x] + table_reference[5][x]) > 5)
+		if ((table_reference[0][x] + table_reference[5][x]) >= 6)
 			return (0);
 		x++;
 	}
 	while (y < 6)
 	{
-		if ((table_reference[y][0] + table_reference[y][5]) > 5)
+		if ((table_reference[y][0] + table_reference[y][5]) >= 6)
 			return (0);
 		y++;
 	}

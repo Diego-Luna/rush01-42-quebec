@@ -6,7 +6,7 @@
 /*   By: dluna-lo <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 10:42:09 by dluna-lo          #+#    #+#             */
-/*   Updated: 2022/03/05 19:35:44 by dluna-lo         ###   ########.fr       */
+/*   Updated: 2022/03/05 19:49:20 by dluna-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	ft_create_table(int reference[6][6], int list_x[16])
 int	main(int arg, char **str)
 {
 	int	table_reference[6][6];
-	int	table_[4][4][4];
+	//int	table[4][4][4];
 	int	reference_list[16];
 
 	if (arg == 2 && ft_strlen(str[1]) == 31
