@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   int.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dluna-lo <marvin@42quebec.com>             +#+  +:+       +#+        */
+/*   By: dluna-lo <dluna-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 17:25:48 by dluna-lo          #+#    #+#             */
-/*   Updated: 2022/03/06 06:50:52 by dluna-lo         ###   ########.fr       */
+/*   Updated: 2022/03/06 19:57:02 by dluna-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,35 @@ void	ft_write(int n)
 	write(1, &n, 1);
 }
 
-void	ft_table_print(int table[6][6], int size_x, int size_y)
+void	ft_table_print(int table[6][6])
 {
 	int	x;
 	int	y;
 
 	y = 0;
-	while (y < size_y)
+	while (y < 6)
 	{
 		x = 0;
-		while (x < size_x)
+		while (x < 6)
+		{
+			ft_write(table[y][x]);
+			x++;
+		}
+		write(1, "\n", 1);
+		y++;
+	}
+}
+
+void	ft_table_print4(int table[4][4])
+{
+	int	x;
+	int	y;
+
+	y = 0;
+	while (y < 4)
+	{
+		x = 0;
+		while (x < 4)
 		{
 			ft_write(table[y][x]);
 			x++;
@@ -84,3 +103,4 @@ int	ft_game_possible(int table_reference[6][6])
 	}
 	return (1);
 }
+

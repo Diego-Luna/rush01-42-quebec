@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dluna-lo <marvin@42quebec.com>             +#+  +:+       +#+        */
+/*   By: dluna-lo <dluna-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 10:42:09 by dluna-lo          #+#    #+#             */
-/*   Updated: 2022/03/06 15:52:46 by dluna-lo         ###   ########.fr       */
+/*   Updated: 2022/03/06 21:00:43 by dluna-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ int		ft_strlen(char *str);
 int		ft_str_is_numeric_and_space(char *str);
 int		ft_game_possible(int table_reference[6][6]);
 void	ft_atoi(char *str, int list_x[16]);
-void	ft_table_print(int table[6][6], int size_x, int size_y);
-void	ft_table_rest(int table[5][4][4]);
-void	ft_table_print_3d(int table[5][4][4], int s_z, int s_y, int s_x);
-void	ft_table_constant(int table[5][4][4], int t_r[6][6]);
-void	ft_loop_impossibles(int table[5][4][4], int t_r[6][6]);
-void    ft_fusion_tables_loop(int table[5][4][4]);
+void	ft_table_rest(int table[4][4]);
+void	ft_table_print(int table[6][6]);
+void	ft_table_print4(int table[4][4]);
+void	ft_run_login(int table[4][4],int table_reference[6][6]);
+void	ft_table_constant(int table[4][4], int t_r[6][6]);
+//void	ft_loop_impossibles(int table[5][4][4], int t_r[6][6]);
 
 void	ft_create_table(int reference[6][6], int list_x[16])
 {
@@ -54,7 +54,7 @@ void	ft_create_table(int reference[6][6], int list_x[16])
 int	main(int arg, char **str)
 {
 	int	table_reference[6][6];
-	int	table[5][4][4];
+	int	table[4][4];
 	int	reference_list[16];
 
 	if (arg == 2 && ft_strlen(str[1]) == 31
@@ -62,18 +62,18 @@ int	main(int arg, char **str)
 	{
 		ft_atoi(str[1], reference_list);
 		ft_create_table(table_reference, reference_list);
-		ft_table_print(table_reference, 6, 6);
+		ft_table_print(table_reference);
 		write(1, "\n-------\n", 9);
 		if (ft_game_possible(table_reference))
 		{
 			ft_table_rest(table);
 			ft_table_constant(table, table_reference);
-		//	ft_table_print(table_reference, 6, 6);
-			ft_loop_impossibles(table, table_reference);
-			write(1, "\n", 1);
-		//	ft_table_print_3d(table, 5, 4, 4);
-			ft_fusion_tables_loop(table);
-			ft_table_print_3d(table, 5, 4, 4);
+			ft_table_print(table_reference);
+			ft_table_print4(table);
+			write(1, "\n-------\n", 9);
+			ft_run_login(table, table_reference);
+
+			ft_table_print4(table);
 		}
 		else
 			write(1, "Error", 5);

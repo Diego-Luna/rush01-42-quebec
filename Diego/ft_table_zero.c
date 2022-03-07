@@ -3,65 +3,62 @@
 /*                                                        :::      ::::::::   */
 /*   ft_table_zero.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raruiz-r <marvin@42quebec.com>             +#+  +:+       +#+        */
+/*   By: dluna-lo <dluna-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 11:45:59 by raruiz-r          #+#    #+#             */
-/*   Updated: 2022/03/06 15:52:38 by dluna-lo         ###   ########.fr       */
+/*   Updated: 2022/03/06 20:44:14 by dluna-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<unistd.h>
+
 #include<stdlib.h>
 
-void    ft_check_impossibles(int table[5][4][4], int compa[4], int y, int x);
-void	ft_table_rest(int table[5][4][4])
+//void    ft_check_impossibles(int table[5][4][4], int compa[4], int y, int x);
+
+void	ft_table_rest(int table[4][4])
 {
 	int	z;
 	int	x;
 	int	y;
 
-	z = 0;
-	while (z < 5)
+	y = 0;
+	while (y < 4)
 	{
-		y = 0;
-		while (y < 4)
+		x = 0;
+		while (x < 4)
 		{
-			x = 0;
-			while (x < 4)
-			{
-				table[z][y][x] = 0;
-				x++;
-			}
-			y++;
+			table[y][x] = 0;
+			x++;
 		}
-		z++;
+		y++;
 	}
+	z++;
 }
 
-void	ft_add_constant(int table[5][4][4], int t_r[6][6], int x_y[2], int v)
+void	ft_add_constant(int table[4][4], int x_y[2], int v)
 {
 	if (x_y[1] == 0)
 	{
-		table[0][0][x_y[0] - 1] = v;
-		t_r[1][x_y[0]] = v;
+		table[0][x_y[0] - 1] = v;
+		//t_r[1][x_y[0]] = v;
 	}
 	else if (x_y[1] == 5)
 	{
-		table[0][3][x_y[0] - 1] = v;
-		t_r[4][x_y[0]] = v;
+		table[3][x_y[0] - 1] = v;
+		//t_r[4][x_y[0]] = v;
 	}
 	else if (x_y[1] >= 1 && x_y[1] <= 4 && x_y[0] == 0)
 	{
-		table[0][x_y[1] - 1][0] = v;
-		t_r[x_y[1]][1] = v;
+		table[x_y[1] - 1][0] = v;
+		//t_r[x_y[1]][1] = v;
 	}
 	else if (x_y[1] >= 1 && x_y[1] <= 4 && x_y[0] == 5)
 	{
-		table[0][x_y[1] - 1][3] = v;
-		t_r[x_y[1]][4] = v;
+		table[x_y[1] - 1][3] = v;
+		//t_r[x_y[1]][4] = v;
 	}
 }
 
-void	ft_table_constant(int table[5][4][4], int t_r[6][6])
+void	ft_table_constant(int table[4][4], int t_r[6][6])
 {
 	int	x;
 	int	y;
@@ -77,18 +74,18 @@ void	ft_table_constant(int table[5][4][4], int t_r[6][6])
 			x_y[1] = y;
 			if (t_r[y][x] == 4)
 			{
-				ft_add_constant(table, t_r, x_y, 1);
+				ft_add_constant(table, x_y, 1);
 			}
 			else if (t_r[y][x] == 1)
 			{
-				ft_add_constant(table, t_r, x_y, 4);
+				ft_add_constant(table, x_y, 4);
 			}
 			x++;
 		}
 		y++;
 	}
 }
-
+/*
 void	ft_put_tr_values(int values[4], int t_r[6][6], int y_x[2])
 {
 	values[0] = t_r[0][y_x[1]];
@@ -167,3 +164,4 @@ void	ft_fusion_tables_loop(int table[5][4][4])
 		y++;
 	}
 }
+*/
