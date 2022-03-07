@@ -6,7 +6,7 @@
 /*   By: dluna-lo <dluna-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 17:25:48 by dluna-lo          #+#    #+#             */
-/*   Updated: 2022/03/06 19:57:02 by dluna-lo         ###   ########.fr       */
+/*   Updated: 2022/03/06 23:34:18 by dluna-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,10 @@ void	ft_table_print4(int table[4][4])
 		while (x < 4)
 		{
 			ft_write(table[y][x]);
+			if (x != 3)
+			{
+				write(1, " ", 1);
+			}
 			x++;
 		}
 		write(1, "\n", 1);
@@ -103,4 +107,3 @@ int	ft_game_possible(int table_reference[6][6])
 	}
 	return (1);
 }
-
