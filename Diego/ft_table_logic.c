@@ -6,11 +6,10 @@
 /*   By: dluna-lo <dluna-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 12:08:42 by dluna-lo          #+#    #+#             */
-/*   Updated: 2022/03/06 22:58:23 by dluna-lo         ###   ########.fr       */
+/*   Updated: 2022/03/06 23:05:53 by dluna-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 /*
 void ft_if_1_3_3(int *find, int value_check)
 {
@@ -242,7 +241,6 @@ void	ft_number_1_4_h(int t[4][4],int x, int y)
 	{
 		while (i < 5)
 		{
-			printf("-> valor de x: %d, y: %d\n", x, y);
 			t[y - 1][x - 2] = i;
 			x--;
 			i++;
@@ -263,22 +261,18 @@ void	ft_check_4(int t[4][4],int t_r[6][6])
 		{
 			if (y == 0 && x >= 1 && x <= 4 && t_r[y][x] == 4) // primera fila
 			{
-				printf("> if 1 Valor de x: %d, y: %d, t_r[y][x]: %d\n", x, y, t_r[y][x]);
 				ft_number_1_4_v(t, x, y);
 			}
 			else if (y == 5 && x >= 1 && x <= 4 && t_r[y][x] == 4) // ultima fila
 			{
-				printf("> if 2 Valor de x: %d, y: %d, t_r[y][x]: %d\n", x, y, t_r[y][x]);
 				ft_number_1_4_v(t, x, y);
 			}
 			else if (y >= 1 && y <= 4 && x == 0 && t_r[y][x] == 4) // primera fila izquierda
 			{
-				printf("> if 3 Valor de x: %d, y: %d, t_r[[y][x]: %d\n", x, y, t_r[y][x]);
 				ft_number_1_4_h(t, x, y);
 			}
 			else if (y >= 1 && y <= 4 && x == 5 && t_r[y][x] == 4) // primera fila derecha
 			{
-				printf("> if 4 Valor de x: %d, y: %d, t_r[[y][x]: %d\n", x, y, t_r[y][x]);
 				ft_number_1_4_h(t, x, y);
 			}
 			x++;

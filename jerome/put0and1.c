@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <unistd.h>
 
 int clue_is_not_one_impossibles(int x, int y, int table[5][4][4]) /* this function puts 1 (impossible) in table 4 (rules c) */

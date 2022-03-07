@@ -6,7 +6,7 @@
 /*   By: dluna-lo <dluna-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 11:45:59 by raruiz-r          #+#    #+#             */
-/*   Updated: 2022/03/06 20:44:14 by dluna-lo         ###   ########.fr       */
+/*   Updated: 2022/03/06 23:05:27 by dluna-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 void	ft_table_rest(int table[4][4])
 {
-	int	z;
 	int	x;
 	int	y;
 
@@ -31,7 +30,6 @@ void	ft_table_rest(int table[4][4])
 		}
 		y++;
 	}
-	z++;
 }
 
 void	ft_add_constant(int table[4][4], int x_y[2], int v)
@@ -94,7 +92,6 @@ void	ft_put_tr_values(int values[4], int t_r[6][6], int y_x[2])
 	values[3] = t_r[y_x[0]][5];
 }
 
-#include <stdio.h>
 void	ft_loop_impossibles(int table[5][4][4], int t_r[6][6])
 {
 	int	x;
